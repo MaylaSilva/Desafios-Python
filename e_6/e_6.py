@@ -1,12 +1,6 @@
-'''Vamos construir um jogo de forca. O programa escolherá
-aleatoriamente uma palavra secreta de uma lista predefinida. A palavra
-secreta será representada por espaços em branco, um para cada letra
-da palavra. O jogador terá um número limitado de 6 tentativas. Em cada
-tentativa, o jogador pode fornecer uma letra. Se a letra estiver presente
-na palavra secreta, ela será revelada nas posições correspondentes. Se
-a letra não estiver na palavra, uma mensagem de erro deverá ser
-informada. Após um número máximo de erros, o jogador perde. O jogo
-continua até que o jogador adivinhe a palavra ou exceda o número
+'''Vamos construir um jogo de forca. O programa escolherá aleatoriamente uma palavra secreta de uma lista predefinida. A palavra secreta será representada por espaços em branco, um para cada letra
+da palavra. O jogador terá um número limitado de 6 tentativas. Em cada tentativa, o jogador pode fornecer uma letra. Se a letra estiver presente na palavra secreta, ela será revelada nas posições correspondentes. Se
+a letra não estiver na palavra, uma mensagem de erro deverá ser informada. Após um número máximo de erros, o jogador perde. O jogo continua até que o jogador adivinhe a palavra ou exceda o número
 máximo de tentativas.
 Dica: Você precisará importar uma biblioteca para resolver esse
 exercício'''
@@ -53,16 +47,15 @@ def jogoForca():
         letra = digitaLetra()
 
         if letra in palavraEscolhida:
-            print(f"Boa! A letra {letra.upper} está na palavra.")
+            print(f"\nIsso aí! A letra {letra} está na palavra.")
         else:
             tentativasRestantes -= 1
-            print(f"Que pena, a letra {letra.upper} não está na palavra. Perdeu uma tentativa.")
+            print(f"\nQue pena, a letra {letra} não está na palavra. Perdeu uma tentativa.")
 
         
         palavraEscondida = escondePalavra(palavraEscolhida)
         print("A palavra secreta está assim: " + palavraEscondida)
 
-        # Verificar se o jogador adivinhou a palavra completa
         if "_" not in palavraEscondida:
             print(f"Parabéns! Você adivinhou a palavra: {palavraEscolhida}")
             break
